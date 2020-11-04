@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ng-app="demoApp">
+    <head>
+        <title> AngularJS Demo App</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+    <body style="background-color: darkgray;">
+        <div class="container">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <ul>
+                        <li><a href="../views/newProduct.html"></a></li>                        
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div ng-controller="EditProductController">
+                <div class="container">
+                    <h1>Nuevo Producto</h1>
+                    <hr />
+
+                    <form name="productForm">
+                        <fieldset>
+                            <div class="row">
+                                <label for="productName">Product Name:</label>
+                                <input id="productName" required ng-model="product.name" type="text" placeholder="Name of your product..">
+                            </div>
+                            <div class="row">
+                                <label for="productPrice">Product Price:</label>
+                                <input id="productPrice" required ng-model="product.price" type="number" placeholder="Price of your product..">
+                            </div>
+                            <div class="row">
+                                <label for="productStock">Product Stock:</label>
+                                <input id="productStock" ng-model="product.stock" type="number" placeholder="Stock of your product..">
+                            </div>
+                            <br />
+                            <div class="row">
+                                <label for="productImgUrl">Image:</label>
+                                <input id="productImgUrl" ng-model="product.imgUrl" type="url" placeholder="Image of your product..">
+                            </div>
+
+                            <img ng-src="{{product.imgUrl}}" src="" />
+                            <br />
+                            <br />
+
+                        </fieldset>
+                        
+                        <button type="submit" ng-click="saveProduct(product, productForm)"class="btn btn-primary"> Save</button>
+                        <button type="button" class="btn btn-default"> Cancel</button>
+
+
+
+                    </form>
+
+                </div>
+
+            </div>
+            
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+        crossorigin="anonymous"></script> 
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"> </script>
+        <script src="../app.js"></script>
+        <script src="../controllers/productController.js"></script>
+        <script src="../controllers/editProductController.js"></script>
+
+    </body>
+</html>
